@@ -376,18 +376,28 @@ Inside /assets/stylesheets/application.css, add:
   padding: 1em;
   background-color: #90ee90;
 }
+
+.field {
+  padding: .5em;
+}
 ```
 And to /app/packs/application.js (not the encouraged location):
 ```
 document.addEventListener('DOMContentLoaded', function() {
+  materializeInit()
+});
+
+document.addEventListener('turbolinks:render', function() {
+  materializeInit()
+});
+
+function materializeInit() {
   const sideNav = document.querySelector('.sidenav');
   M.Sidenav.init(sideNav, {});
   var elems = document.querySelectorAll('select');
   var instances = M.FormSelect.init(elems);
-});
+}
 ```
-
-TODO: - Figure out Rails 6 Materialize js init issue
 
 Inside app/controllers, create sessions_controller.rb:
 ```
