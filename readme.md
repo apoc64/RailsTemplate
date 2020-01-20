@@ -1,4 +1,4 @@
-#Hey!
+# Hey!
 
 Hi me, or you if you're not me. These instructions will setup a Rails 6 project with sorcery for auth and rspec for testing. You should have homebrew for managing installations, a ruby version manager such as rbenv or rvm (not both), Postgres, RubyGems, the gem bundler for Ruby package management, and Rails.
 
@@ -7,7 +7,8 @@ Verify local versions of Ruby(2.6.3) and Rails(6.0.2.1), switch if necessary:
 ruby -v
 rails -v
 ```
-To create a new rails project with added gems from the template in this repo, run:
+To create a new rails project with added gems from the template in this repo you will need a relative path to template.rb. If it is in the parent directory where your new project will live, run:
+
 `rails new wacky_widgets -m template.rb -T -d="postgresql"`
 
 cd into the directory of the new project and install rspec
