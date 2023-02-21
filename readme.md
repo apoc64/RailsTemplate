@@ -14,7 +14,7 @@ To create a new rails project with added gems from the template in this repo you
 cd into the directory of the new project and install rspec
 `rails g rspec:install`
 
-To enable ShouldaMatchers test helpers, in rails_helper add:
+To enable ShouldaMatchers test helpers, in rails_helper before RSpec.configure add:
 ```
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
@@ -25,7 +25,7 @@ end
 ```
 Also a good time to delete boilerplate code.
 
-To enable SimpleCov test coverage, in spec_helper add:
+To enable SimpleCov test coverage, in spec_helper at the top add:
 ```
 require 'simplecov'
 
